@@ -1,0 +1,146 @@
+🛡️ TryHackMe Pre‑Security Path — Write‑Up
+Overview
+The Pre‑Security Path on TryHackMe is designed to build the foundational knowledge required before diving into penetration testing, red teaming, or any advanced cybersecurity discipline.
+This write‑up documents my learning journey through the path, breaking down each module with clear explanations and technical insights.
+
+📚 Path Structure
+The path consists of four main modules:
+
+Module	Description
+Cyber Security Introduction	Core security concepts, threat actors, attack types
+Networking Fundamentals	OSI model, TCP/IP, protocols, packet analysis
+Linux Fundamentals	Command line basics, permissions, processes
+Windows Fundamentals	Registry, services, PowerShell, system internals
+🧩 1. Cyber Security Introduction
+Key Concepts Learned
+Security domains and roles: Red Team, Blue Team, Purple Team
+
+Types of attacks:
+
+Social Engineering
+
+Malware
+
+Web‑based attacks
+
+Core principles:
+
+CIA Triad
+
+Threat Actors
+
+Attack Surface
+
+Technical Highlights
+Understanding the attack lifecycle:
+Recon → Initial Access → Privilege Escalation → Persistence → Exfiltration
+
+Introduction to MITRE ATT&CK as a framework for adversary techniques
+
+🌐 2. Networking Fundamentals
+Core Knowledge
+OSI Model (Layer‑by‑Layer understanding)
+
+TCP/IP Model
+
+Essential protocols:
+
+HTTP / HTTPS
+
+DNS
+
+DHCP
+
+ARP
+
+ICMP
+
+Practical Skills
+Packet inspection using Wireshark
+
+Understanding ports and services
+
+Network troubleshooting using:
+
+bash
+ping
+traceroute
+netstat
+🐧 3. Linux Fundamentals
+What I Learned
+Navigating the Linux filesystem
+
+Managing files, directories, and permissions
+
+Working with processes
+
+Using package managers
+
+Essential commands:
+
+bash
+ls -la
+chmod
+chown
+grep
+find
+ps aux
+Technical Notes
+Understanding permission levels (e.g., 777 / 755 / 644)
+
+Working with SUID binaries
+
+Redirection and piping
+
+Basics of Bash scripting
+
+🪟 4. Windows Fundamentals
+Core Concepts
+Windows Registry structure
+
+Managing services
+
+Using Event Viewer
+
+Understanding processes and threads
+
+PowerShell basics
+
+Useful Commands
+powershell
+Get-Process
+Get-Service
+Get-EventLog
+Get-LocalUser
+🎯 Summary of the Path
+Completing the Pre‑Security path strengthened my understanding of:
+
+Networking
+
+Operating systems (Linux & Windows)
+
+Cybersecurity fundamentals
+
+Analytical thinking
+
+How systems work before attempting to exploit them
+
+This foundation is essential for progressing into advanced areas such as:
+
+Penetration Testing
+
+Red Teaming
+
+Web Application Security
+
+Malware Analysis
+
+📝 Personal Notes
+Since my primary focus is now Red Teaming, this path was crucial in building the underlying knowledge needed to understand how systems operate before attacking them.
+I follow a fixed workflow for every lab:
+
+Review the underlying basics
+
+Do a short focused mini‑training on the lab’s concept
+
+Solve the lab step‑by‑step with full reasoning
