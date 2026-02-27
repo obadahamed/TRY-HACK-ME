@@ -107,19 +107,11 @@ THM{80UN7Y_h4cK3r}
 
 7. Challenge Questions & Answers
 Question	Answer
-Who wrote the task list?	lin
-What service can you bruteforce with the text file found?	SSH
-What is the user’s password?	RedDr4gonSynd1cat3
-user.txt	THM{CR1M3_SyNd1C4T3}
-root.txt	THM{80UN7Y_h4cK3r}
-Conclusion
-The Bounty Hacker room demonstrates a classic attack chain:
-
-Service enumeration
-
-Anonymous FTP access
-
-Credential brute‑forcing
+Who wrote the task list?	| lin
+What service can you bruteforce with the text file found?	| SSH
+What is the user’s password?	| RedDr4gonSynd1cat3
+user.txt |	THM{CR1M3_SyNd1C4T3}
+root.txt	| THM{80UN7Y_h4cK3r}
 
 SSH compromise
 
