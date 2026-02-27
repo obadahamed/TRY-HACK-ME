@@ -1,6 +1,6 @@
 TryHackMe — Bounty Hacker Write‑Up
 Insights, Methodology, and Flags
-Author: Somnath Adhikary
+
 Write‑Up by Obada
 
 1. Enumeration
