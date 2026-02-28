@@ -1,7 +1,11 @@
 Mr. Robot CTF — TryHackMe Writeup
+
 Author: Obada
+
 Difficulty: Medium
+
 Category: Enumeration, Web Exploitation, WordPress Abuse, Privilege Escalation
+
 
 A tribute to the iconic Mr. Robot series, this CTF challenges you to think like Elliot Alderson: enumerate, exploit, escalate, and uncover the three hidden keys.
 
