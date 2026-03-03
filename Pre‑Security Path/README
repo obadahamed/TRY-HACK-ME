@@ -1,146 +1,103 @@
-🛡️ TryHackMe Pre‑Security Path — Write‑Up
-Overview
-The Pre‑Security Path on TryHackMe is designed to build the foundational knowledge required before diving into penetration testing, red teaming, or any advanced cybersecurity discipline.
-This write‑up documents my learning journey through the path, breaking down each module with clear explanations and technical insights.
+# 🛡️ TryHackMe — Pre-Security Path
 
-📚 Path Structure
-The path consists of four main modules:
+![Path](https://img.shields.io/badge/Path-Pre--Security-red?style=flat-square&logo=tryhackme)
+![Status](https://img.shields.io/badge/Status-Completed-brightgreen?style=flat-square)
 
-Module	Description
-Cyber Security Introduction	Core security concepts, threat actors, attack types
-Networking Fundamentals	OSI model, TCP/IP, protocols, packet analysis
-Linux Fundamentals	Command line basics, permissions, processes
-Windows Fundamentals	Registry, services, PowerShell, system internals
-🧩 1. Cyber Security Introduction
-Key Concepts Learned
-Security domains and roles: Red Team, Blue Team, Purple Team
+> Complete notes and writeup for the TryHackMe Pre-Security Path.  
+> This path builds the foundational knowledge required before diving into penetration testing or red teaming.
 
-Types of attacks:
+---
 
-Social Engineering
+## 📚 Path Structure
 
-Malware
+| Module | Topics | Status |
+|--------|--------|--------|
+| 🔐 Cyber Security Introduction | CIA Triad, Threat Actors, Attack Types | ✅ Done |
+| 🌐 Networking Fundamentals | OSI, TCP/IP, DNS, DHCP, ARP | ✅ Done |
+| 🐧 Linux Fundamentals | Filesystem, Permissions, Processes, Bash | ✅ Done |
+| 🪟 Windows Fundamentals | Registry, Services, PowerShell, Event Logs | ✅ Done |
 
-Web‑based attacks
+---
 
-Core principles:
+## 🔐 1. Cyber Security Introduction
 
-CIA Triad
+**Core concepts learned:**
+- Security roles: Red Team / Blue Team / Purple Team
+- Attack types: Social Engineering, Malware, Web-based attacks
+- CIA Triad: Confidentiality, Integrity, Availability
+- Attack lifecycle: `Recon → Initial Access → Privilege Escalation → Persistence → Exfiltration`
+- Introduction to **MITRE ATT&CK** framework
 
-Threat Actors
+---
 
-Attack Surface
+## 🌐 2. Networking Fundamentals
 
-Technical Highlights
-Understanding the attack lifecycle:
-Recon → Initial Access → Privilege Escalation → Persistence → Exfiltration
+**Core knowledge:**
+- OSI Model — all 7 layers with their roles
+- TCP/IP Model and how it maps to OSI
+- Key protocols: HTTP/S, DNS, DHCP, ARP, ICMP
 
-Introduction to MITRE ATT&CK as a framework for adversary techniques
+**Practical skills:**
+- Packet inspection with **Wireshark**
+- Understanding ports and services
+- Network troubleshooting:
 
-🌐 2. Networking Fundamentals
-Core Knowledge
-OSI Model (Layer‑by‑Layer understanding)
+```bash
+ping <host>          # Test connectivity
+traceroute <host>    # Trace packet path
+netstat -an          # View active connections
+```
 
-TCP/IP Model
+---
 
-Essential protocols:
+## 🐧 3. Linux Fundamentals
 
-HTTP / HTTPS
+**Key skills:**
+- Navigating the Linux filesystem
+- File/directory management and permissions
+- Working with processes and package managers
 
-DNS
+**Essential commands:**
+```bash
+ls -la               # List files with permissions
+chmod 755 file       # Change file permissions
+chown user:group     # Change file ownership
+grep "pattern" file  # Search inside files
+find / -name "file"  # Find files by name
+ps aux               # List running processes
+```
 
-DHCP
+**Technical notes:**
+- Permission levels: `777` / `755` / `644`
+- SUID binaries and privilege escalation potential
+- Redirection, piping, and basic Bash scripting
 
-ARP
+---
 
-ICMP
+## 🪟 4. Windows Fundamentals
 
-Practical Skills
-Packet inspection using Wireshark
+**Core concepts:**
+- Windows Registry structure and hives
+- Managing services and processes
+- Event Viewer — log analysis basics
+- PowerShell for enumeration
 
-Understanding ports and services
+**Useful commands:**
+```powershell
+Get-Process          # List running processes
+Get-Service          # List services
+Get-EventLog         # Read event logs
+Get-LocalUser        # List local user accounts
+```
 
-Network troubleshooting using:
+---
 
-bash
-ping
-traceroute
-netstat
-🐧 3. Linux Fundamentals
-What I Learned
-Navigating the Linux filesystem
+## 🎯 Key Takeaway
 
-Managing files, directories, and permissions
+> You can't exploit what you don't understand. The Pre-Security path built the foundation I needed to approach Red Team operations with real technical depth — not just running tools blindly.
 
-Working with processes
+---
 
-Using package managers
+## 🔗 Certificate
 
-Essential commands:
-
-bash
-ls -la
-chmod
-chown
-grep
-find
-ps aux
-Technical Notes
-Understanding permission levels (e.g., 777 / 755 / 644)
-
-Working with SUID binaries
-
-Redirection and piping
-
-Basics of Bash scripting
-
-🪟 4. Windows Fundamentals
-Core Concepts
-Windows Registry structure
-
-Managing services
-
-Using Event Viewer
-
-Understanding processes and threads
-
-PowerShell basics
-
-Useful Commands
-powershell
-Get-Process
-Get-Service
-Get-EventLog
-Get-LocalUser
-🎯 Summary of the Path
-Completing the Pre‑Security path strengthened my understanding of:
-
-Networking
-
-Operating systems (Linux & Windows)
-
-Cybersecurity fundamentals
-
-Analytical thinking
-
-How systems work before attempting to exploit them
-
-This foundation is essential for progressing into advanced areas such as:
-
-Penetration Testing
-
-Red Teaming
-
-Web Application Security
-
-Malware Analysis
-
-📝 Personal Notes
-Since my primary focus is now Red Teaming, this path was crucial in building the underlying knowledge needed to understand how systems operate before attacking them.
-I follow a fixed workflow for every lab:
-
-Review the underlying basics
-
-Do a short focused mini‑training on the lab’s concept
-
-Solve the lab step‑by‑step with full reasoning
+![Pre-Security Badge](Pre-Securit.png)
