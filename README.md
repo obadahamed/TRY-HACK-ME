@@ -1,130 +1,79 @@
-🛡️ TryHackMe — My Cybersecurity Learning Journey
-Introduction
-TryHackMe has been one of the most important platforms in my cybersecurity journey.
-I use it not just to complete rooms, but to build real technical depth, strengthen my fundamentals, and prepare myself for advanced Red Team operations.
+# 🛡️ TryHackMe — Writeups & Notes
 
-This README documents my personal experience, learning style, and the value I gained from the platform.
+![Platform](https://img.shields.io/badge/Platform-TryHackMe-red?style=flat-square&logo=tryhackme&logoColor=white)
+![Profile](https://img.shields.io/badge/Profile-NEPHOS-red?style=flat-square)
+![Rooms](https://img.shields.io/badge/Rooms%20Completed-3%2B-blue?style=flat-square)
+![Status](https://img.shields.io/badge/Status-Active-brightgreen?style=flat-square)
 
-🚀 Why I Use TryHackMe
-For me, TryHackMe is more than a training website — it’s a structured environment where I can:
+> Personal notes, writeups, and methodology from my [TryHackMe](https://tryhackme.com/p/NEPHOS) journey.  
+> Focused on building real Red Team fundamentals through hands-on labs.
 
-Build strong fundamentals before attacking systems
+---
 
-Practice real-world offensive techniques safely
+## 📁 Structure
 
-Strengthen my Red Team mindset
+```
+TRY-HACK-ME/
+├── Pre-Security Path/
+│   ├── README.md         → Full path notes (Networking, Linux, Windows, Security Intro)
+│   └── Pre-Securit.png   → Completion certificate
+├── CTF/
+│   ├── README.md         → CTF rooms index
+│   ├── Mr.Robot.md       → Medium — Linux / Web / Privesc
+│   ├── Agent_Sudo.md     → Easy — Steganography / Privesc
+│   └── Bounty_Hacker.md  → Easy — Linux / Brute Force
+└── README.md
+```
 
-Train consistently with hands-on labs
+---
 
-Track my progress and measure my growth
+## ✅ Completed
 
-I combine TryHackMe with other platforms (like BTLO, GitHub Education, and DataCamp) to create a complete learning ecosystem.
+| Room / Path | Difficulty | Status |
+|-------------|-----------|--------|
+| Pre-Security Path | Foundational | ✅ Completed |
+| Mr. Robot CTF | 🟡 Medium | ✅ Solved |
+| Agent Sudo | 🟢 Easy | ✅ Solved |
+| Bounty Hacker | 🟢 Easy | ✅ Solved |
+| Jr Penetration Tester | 🔴 Intermediate | ✅ Solved |
 
-📚 How I Learn on TryHackMe
-I follow a fixed workflow for every room or lab:
+---
 
-1️⃣ Start with the underlying basics
-Before touching the lab, I review the core concepts behind it:
+## 🧠 My Workflow
 
-Networking (DNS, HTTP, ARP, TCP/IP)
+Every room I complete goes through this process:
 
-Operating systems (Linux processes, Windows registry, services)
+1. **Pre-study** — review the core concept before opening the lab
+2. **Recon** — nmap, enumerate services, find attack surface
+3. **Exploit** — methodical approach, understand every step
+4. **Document** — write notes with reasoning, not just answers
+5. **Reflect** — what did I learn? How would a defender detect this?
 
-Security fundamentals (MITRE, threat actors, attack lifecycle)
+---
 
-Encoding & formats (Base64, JWT, logs, file structures)
+## 🎯 Skills Built
 
-2️⃣ Do a focused mini‑training
-If the room is about a specific topic (e.g., JWT, DNS, privilege escalation),
-I do a short, targeted refresher to ensure I fully understand the concept before applying it.
+**Networking:** TCP/IP, DNS, DHCP, ARP, OSI Model  
+**Linux:** Permissions, SUID, processes, Bash scripting  
+**Windows:** Registry, services, PowerShell, event logs  
+**Offensive:** Recon, enumeration, brute force, basic exploitation, privilege escalation  
+**Defensive:** Log analysis, threat detection, incident response basics
 
-3️⃣ Solve the lab step‑by‑step
-I never rush through tasks.
-I break down every step, analyze the output, and understand why each command works.
+---
 
-4️⃣ Document everything
-I write detailed notes, explanations, and reasoning — not just answers.
-This helps me build long-term knowledge and improves my Red Team thinking.
+## 🔧 Tools Used
 
-🧩 What I’ve Completed So Far
-I’ve worked through multiple TryHackMe paths and rooms, including:
+![Nmap](https://img.shields.io/badge/Nmap-004170?style=flat-square&logoColor=white)
+![Kali Linux](https://img.shields.io/badge/Kali%20Linux-557C94?style=flat-square&logo=kalilinux&logoColor=white)
+![Burp Suite](https://img.shields.io/badge/Burp%20Suite-FF6633?style=flat-square&logo=portswigger&logoColor=white)
+![Wireshark](https://img.shields.io/badge/Wireshark-1679A7?style=flat-square&logo=wireshark&logoColor=white)
+![Hydra](https://img.shields.io/badge/Hydra-Brute%20Force-darkred?style=flat-square)
+![Gobuster](https://img.shields.io/badge/Gobuster-Directory%20Enum-orange?style=flat-square)
 
-Pre‑Security (Foundational knowledge)
+---
 
-Networking & OS fundamentals
+## 📫 Connect
 
-Linux & Windows basics
-
-Beginner offensive labs
-
-Hands-on challenges that build real attacker skills
-
-This foundation supports my current focus on Red Teaming and offensive security.
-
-🎯 Skills I Developed Through TryHackMe
-TryHackMe helped me strengthen key areas:
-
-🔹 Technical Fundamentals
-OSI & TCP/IP
-
-DNS, DHCP, ARP, ICMP
-
-Linux permissions, processes, SUID
-
-Windows services, registry, PowerShell
-
-🔹 Offensive Skills
-Recon & enumeration
-
-Web exploitation basics
-
-Privilege escalation concepts
-
-Understanding attacker workflows
-
-🔹 Analytical Thinking
-Breaking problems into steps
-
-Understanding system behavior
-
-Reading logs and outputs
-
-Building attacker logic
-
-🛠️ Why TryHackMe Works for Me
-The platform fits my learning style because it is:
-
-Hands-on — I learn by doing
-
-Structured — paths guide me step-by-step
-
-Beginner-friendly — but still useful for advanced learners
-
-Realistic — labs simulate real attack scenarios
-
-Flexible — I can combine it with my Red Team studies
-
-It’s the perfect place to build a strong base before diving deeper into offensive security.
-
-📈 My Cybersecurity Journey (So Far)
-Alongside TryHackMe, I’ve also completed:
-
-9 Google Cybersecurity courses
-
-300+ pages of Cisco CyberOps
-
-IBM Ethical Hacking with Open Source
-
-DataCamp: Intro to APIs in Python & Regular Expressions
-
-GitHub Foundations (currently working toward certification)
-
-One-year TryHackMe subscription
-
-Shifted focus fully toward Red Teaming
-
-TryHackMe is a core part of this journey — especially for building the fundamentals that every Red Teamer needs.
-
-✔️ Conclusion
-TryHackMe has played a major role in shaping my cybersecurity foundation.
-It helped me build the knowledge I need before moving into advanced Red Team labs and offensive techniques.
+[![TryHackMe](https://img.shields.io/badge/TryHackMe-NEPHOS-red?style=flat-square&logo=tryhackme)](https://tryhackme.com/p/NEPHOS)
+[![GitHub](https://img.shields.io/badge/GitHub-obadahamed-181717?style=flat-square&logo=github)](https://github.com/obadahamed)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-obadahamed-0077B5?style=flat-square&logo=linkedin)](https://www.linkedin.com/in/obadahamed)
