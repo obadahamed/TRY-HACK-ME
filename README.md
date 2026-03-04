@@ -36,7 +36,7 @@ TRY-HACK-ME/
 | Agent Sudo | 🟢 Easy | ✅ Solved |
 | Bounty Hacker | 🟢 Easy | ✅ Solved |
 | Jr Penetration Tester | 🔴 Intermediate | ✅ Solved |
-
+| Brooklyn Nine Nine | 🟢 Easy | ✅ Solved |
 ---
 
 ## 🧠 My Workflow
