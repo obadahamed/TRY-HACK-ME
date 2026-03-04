@@ -21,7 +21,8 @@ TRY-HACK-ME/
 │   ├── README.md         → CTF rooms index
 │   ├── Mr.Robot.md       → Medium — Linux / Web / Privesc
 │   ├── Agent_Sudo.md     → Easy — Steganography / Privesc
-│   └── Bounty_Hacker.md  → Easy — Linux / Brute Force
+│   ├── Bounty_Hacker.md  → Easy — Linux / Brute Force
+|   └── Brooklyn Nine Nine → Easy — Linux / Privesc
 └── README.md
 ```
 
@@ -35,7 +36,7 @@ TRY-HACK-ME/
 | Mr. Robot CTF | 🟡 Medium | ✅ Solved |
 | Agent Sudo | 🟢 Easy | ✅ Solved |
 | Bounty Hacker | 🟢 Easy | ✅ Solved |
-| Jr Penetration Tester | 🔴 Intermediate | ✅ Solved |
+| Jr Penetration Tester | 🔴 Intermediate | ✅ Completed |
 | Brooklyn Nine Nine | 🟢 Easy | ✅ Solved |
 ---
 
