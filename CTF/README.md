@@ -13,9 +13,9 @@
 | Room | Difficulty | Category | Status |
 |------|-----------|----------|--------|
 | [🤖 Mr. Robot](./Mr.Robot.md) | 🟡 Medium | Linux / Web / Privesc | ✅ Solved |
-| [👾 Agent Sudo](./Agent_Sudo.md) | 🟢 Easy | Steganography / Privesc | ✅ Solved |
-| [🤠 Bounty Hacker](./Bounty_Hacker.md) | 🟢 Easy | Linux / Brute Force | ✅ Solved |
-| [Brooklyn Nine Nine](./Brooklyn_Nine_Nine.md)| 🟢 Easy | Linux /Privesc | ✅ Solved |
+| [👾 Agent Sudo](./Agent Sudo.md) | 🟢 Easy | Steganography / Privesc | ✅ Solved |
+| [🤠 Bounty Hacker](./Bounty Hacker.md) | 🟢 Easy | Linux / Brute Force | ✅ Solved |
+| [Brooklyn Nine Nine](./Brooklyn Nine Nine.md)| 🟢 Easy | Linux /Privesc | ✅ Solved |
 ---
 
 ## 🧠 My Methodology
