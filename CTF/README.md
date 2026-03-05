@@ -16,6 +16,7 @@
 | [👾 Agent Sudo](./Agent_Sudo.md) | 🟢 Easy | Steganography / Privesc | ✅ Solved |
 | [🤠 Bounty Hacker](./Bounty_Hacker.md) | 🟢 Easy | Linux / Brute Force | ✅ Solved |
 | [Brooklyn Nine Nine](./Brooklyn_Nine_Nine.md)| 🟢 Easy | Linux /Privesc | ✅ Solved |
+| [Easy Peasy](./Easy_Peasy.md)| 🟢 Easy | Linux /Privesc | ✅ Solved |
 ---
 
 ## 🧠 My Methodology
