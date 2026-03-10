@@ -17,6 +17,7 @@
 | [🤠 Bounty Hacker](./Bounty_Hacker.md) | 🟢 Easy | Linux / Brute Force | ✅ Solved |
 | [Brooklyn Nine Nine](./Brooklyn_Nine_Nine.md)| 🟢 Easy | Linux /Privesc | ✅ Solved |
 | [Easy Peasy](./Easy_Peasy.md)| 🟢 Easy | Linux /Privesc | ✅ Solved |
+| [🤖 Skynet](./Skynet.md)| 🟢 Easy | Linux /Privesc / Web | ✅ Solved |
 ---
 
 ## 🧠 My Methodology
