@@ -19,6 +19,7 @@
 | [Easy Peasy](./Easy_Peasy.md)| 🟢 Easy | Linux /Privesc | ✅ Solved |
 | [🤖 Skynet](./Skynet.md)| 🟢 Easy | Linux /Privesc / Web | ✅ Solved |
 | [GamingServer](./GamingServer.md)| 🟢 Easy | Linux /Privesc / Web | ✅ Solved |
+| [Chocolate Factory](./Chocolate_Factory.md)| 🟢 Easy | Linux /Privesc / Web | ✅ Solved |
 ---
 
 ## 🧠 My Methodology
