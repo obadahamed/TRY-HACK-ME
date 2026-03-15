@@ -21,6 +21,7 @@
 | [GamingServer](./GamingServer.md)| 🟢 Easy | Linux /Privesc / Web | ✅ Solved |
 | [Chocolate Factory](./Chocolate_Factory.md)| 🟢 Easy | Linux /Privesc / Web | ✅ Solved |
 | [🐇 Wonderland](./Wonderland.md)| 🟡 Medium | Linux / Web / Privesc | ✅ Solved |
+| [🌶️ Startup](./Startup.md)| 🟢 Easy | Linux /Privesc / Web | ✅ Solved |
 ---
 
 ## 🧠 My Methodology
