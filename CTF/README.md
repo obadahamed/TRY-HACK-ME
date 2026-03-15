@@ -20,6 +20,7 @@
 | [🤖 Skynet](./Skynet.md)| 🟢 Easy | Linux /Privesc / Web | ✅ Solved |
 | [GamingServer](./GamingServer.md)| 🟢 Easy | Linux /Privesc / Web | ✅ Solved |
 | [Chocolate Factory](./Chocolate_Factory.md)| 🟢 Easy | Linux /Privesc / Web | ✅ Solved |
+| [🐇 Wonderland](./Wonderland.md)| 🟡 Medium | Linux / Web / Privesc | ✅ Solved |
 ---
 
 ## 🧠 My Methodology
