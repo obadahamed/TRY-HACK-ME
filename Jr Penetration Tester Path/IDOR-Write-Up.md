@@ -1,6 +1,6 @@
 # IDOR — Insecure Direct Object Reference
 ### Web Exploitation Write-Up | Week 3
-**Author:** XENOS  
+**Author:** OBADA  
 **Platform:** TryHackMe  
 **Date:** 2026-03-19
 
