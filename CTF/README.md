@@ -24,6 +24,7 @@
 | [🌶️ Startup](./Startup.md)| 🟢 Easy | Linux /Privesc / Web | ✅ Solved |
 | [👻 Tomghost](./Tomghost.md)| 🟢 Easy | Linux /Privesc / Web | ✅ Solved |
 | [🤠Ignite](./Ignite.md)| 🟢 Easy | Linux /Privesc / Web | ✅ Solved |
+| [Relevant](./Relevant.md)| 🟡 Medium | Windows / Privesc | ✅ Solved |
 ---
 
 ## 🧠 My Methodology
