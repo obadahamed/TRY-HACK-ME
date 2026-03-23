@@ -1,10 +1,13 @@
-# 🚩 TryHackMe — CTF Writeups
+# 🚩 TryHackMe — CTF Write-Ups
 
-![Category](https://img.shields.io/badge/Category-CTF%20Writeups-red?style=flat-square&logo=tryhackme)
-![Rooms](https://img.shields.io/badge/Rooms%20Completed-3-blue?style=flat-square)
+![Profile](https://img.shields.io/badge/TryHackMe-XENOS-red?style=flat-square&logo=tryhackme)
+![Rooms](https://img.shields.io/badge/Rooms%20Completed-14-blue?style=flat-square)
+![Difficulty](https://img.shields.io/badge/Hard-1-critical?style=flat-square)
+![Difficulty](https://img.shields.io/badge/Medium-3-orange?style=flat-square)
+![Difficulty](https://img.shields.io/badge/Easy-10-success?style=flat-square)
 
-> Writeups for CTF rooms completed on TryHackMe.  
-> Each writeup covers the methodology, tools used, and key lessons — no spoilers, just thinking.
+> Structured write-ups for TryHackMe CTF rooms — documenting methodology, tools, techniques, and lessons learned.  
+> Written from the perspective of a self-taught penetration tester following a 52-week Red Team roadmap.
 
 ---
 
@@ -12,33 +15,58 @@
 
 | Room | Difficulty | Category | Status |
 |------|-----------|----------|--------|
-| [🤖 Mr. Robot](./Mr.Robot.md) | 🟡 Medium | Linux / Web / Privesc | ✅ Solved |
-| [👾 Agent Sudo](./Agent_Sudo.md) | 🟢 Easy | Steganography / Privesc | ✅ Solved |
+| [🤖 Mr. Robot](./Mr.Robot.md) | 🟡 Medium | Linux / Web / PrivEsc | ✅ Solved |
+| [👾 Agent Sudo](./Agent_Sudo.md) | 🟢 Easy | Steganography / PrivEsc | ✅ Solved |
 | [🤠 Bounty Hacker](./Bounty_Hacker.md) | 🟢 Easy | Linux / Brute Force | ✅ Solved |
-| [Brooklyn Nine Nine](./Brooklyn_Nine_Nine.md)| 🟢 Easy | Linux /Privesc | ✅ Solved |
-| [Easy Peasy](./Easy_Peasy.md)| 🟢 Easy | Linux /Privesc | ✅ Solved |
-| [🤖 Skynet](./Skynet.md)| 🟢 Easy | Linux /Privesc / Web | ✅ Solved |
-| [GamingServer](./GamingServer.md)| 🟢 Easy | Linux /Privesc / Web | ✅ Solved |
-| [Chocolate Factory](./Chocolate_Factory.md)| 🟢 Easy | Linux /Privesc / Web | ✅ Solved |
-| [🐇 Wonderland](./Wonderland.md)| 🟡 Medium | Linux / Web / Privesc | ✅ Solved |
-| [🌶️ Startup](./Startup.md)| 🟢 Easy | Linux /Privesc / Web | ✅ Solved |
-| [👻 Tomghost](./Tomghost.md)| 🟢 Easy | Linux /Privesc / Web | ✅ Solved |
-| [🤠Ignite](./Ignite.md)| 🟢 Easy | Linux /Privesc / Web | ✅ Solved |
-| [Relevant](./Relevant.md)| 🟡 Medium | Windows / Privesc | ✅ Solved |
----
-
-## 🧠 My Methodology
-
-Every CTF room I follow the same process:
-
-```
-1. Recon      →  nmap scan, enumerate services
-2. Enumerate  →  dig deeper into open ports/services
-3. Exploit    →  use findings to gain initial access
-4. Escalate   →  find privesc vector, get root
-5. Document   →  write up the full process
-```
+| [🚔 Brooklyn Nine Nine](./Brooklyn_Nine_Nine.md) | 🟢 Easy | Linux / PrivEsc | ✅ Solved |
+| [🔑 Easy Peasy](./Easy_Peasy.md) | 🟢 Easy | Linux / PrivEsc | ✅ Solved |
+| [🤖 Skynet](./Skynet.md) | 🟢 Easy | Linux / Web / PrivEsc | ✅ Solved |
+| [🎮 GamingServer](./GamingServer.md) | 🟢 Easy | Linux / Web / PrivEsc | ✅ Solved |
+| [🍫 Chocolate Factory](./Chocolate_Factory.md) | 🟢 Easy | Linux / Web / PrivEsc | ✅ Solved |
+| [🐇 Wonderland](./Wonderland.md) | 🟡 Medium | Linux / Web / PrivEsc | ✅ Solved |
+| [🌶️ Startup](./Startup.md) | 🟢 Easy | Linux / Web / PrivEsc | ✅ Solved |
+| [👻 Tomghost](./Tomghost.md) | 🟢 Easy | Linux / CVE / PrivEsc | ✅ Solved |
+| [🔥 Ignite](./Ignite.md) | 🟢 Easy | Linux / Web / PrivEsc | ✅ Solved |
+| [🪟 Relevant](./Relevant.md) | 🟡 Medium | Windows / PrivEsc | ✅ Solved |
+| [📰 Daily Bugle](./Daily_Bugle.md) | 🔴 Hard | Linux / SQLi / Web / PrivEsc | ✅ Solved |
 
 ---
 
-*More rooms being added as I progress.*
+## 🧠 Methodology
+
+Every room follows the same structured process:
+
+```
+1. Recon       →  nmap scan, service enumeration
+2. Enumerate   →  dig deeper into attack surface
+3. Exploit     →  gain initial foothold
+4. Escalate    →  identify and exploit PrivEsc vector
+5. Document    →  write up the full chain
+```
+
+---
+
+## 🛠️ Tools Used
+
+| Category | Tools |
+|----------|-------|
+| Scanning | `nmap`, `gobuster` |
+| Exploitation | `Metasploit`, `Burp Suite`, custom scripts |
+| Cracking | `john`, `hashcat`, `gpg2john` |
+| Steganography | `steghide`, `binwalk`, `strings` |
+| Shells | `netcat`, PHP reverse shell |
+| PrivEsc | GTFOBins, `sudo -l`, `getcap`, `find` |
+
+---
+
+## 📊 Progress
+
+```
+Easy    ██████████ 10/10
+Medium  ███░░░░░░░  3/3
+Hard    █░░░░░░░░░  1/1
+```
+
+---
+
+*Writeups authored by [XENOS](https://obadahamed.github.io) | 52-Week Red Team Roadmap*
