@@ -1,6 +1,6 @@
 # 🚩 TryHackMe — CTF Write-Ups
 
-![Profile](https://img.shields.io/badge/TryHackMe-XENOS-red?style=flat-square&logo=tryhackme)
+![Profile](https://img.shields.io/badge/TryHackMe-OBADA-red?style=flat-square&logo=tryhackme)
 ![Rooms](https://img.shields.io/badge/Rooms%20Completed-14-blue?style=flat-square)
 ![Difficulty](https://img.shields.io/badge/Hard-1-critical?style=flat-square)
 ![Difficulty](https://img.shields.io/badge/Medium-3-orange?style=flat-square)
