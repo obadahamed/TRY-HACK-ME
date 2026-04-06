@@ -15,6 +15,7 @@
 |------|-------------|
 | [🐧 Linux Privilege Escalation](./Linux%20Privilege%20Escalation.md) | Full Linux privesc techniques with commands |
 | [🐧 Common-Linux-PrivEsc](./Common-Linux-PrivEsc.md) | Common-Linux-PrivEsc ways |
+| [🐧 Linux PrivEsc Arena](./Linux-PrivEsc-Arena.md) | Linux PrivEsc Arena Room | 
 
 ---
 
