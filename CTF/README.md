@@ -66,8 +66,8 @@ Every room follows the same structured process:
 ## 📊 Progress
 
 ```
-Easy    ██████████ 10/10
-Medium  ███░░░░░░░  3/3
+Easy    ███████████ 11/11
+Medium  ████░░░░░░  4/4
 Hard    █░░░░░░░░░  1/1
 ```
 
