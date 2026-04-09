@@ -30,6 +30,8 @@
 | [🪟 Relevant](./Relevant.md) | 🟡 Medium | Windows / PrivEsc | ✅ Solved |
 | [📰 Daily Bugle](./Daily_Bugle.md) | 🔴 Hard | Linux / SQLi / Web / PrivEsc | ✅ Solved |
 | [🐇 Year of the Rabbit](./Year_of_the_Rabbit.md) | 🟢 Easy | Linux / Web / PrivEsc | ✅ Solved |
+| [👾 Watcher](./Watcher.md) | 🟡 Medium | linux / PrivEsc / web | ✅ Solved |
+
 
 
 ---
