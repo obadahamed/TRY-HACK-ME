@@ -3,8 +3,8 @@
 ![Profile](https://img.shields.io/badge/TryHackMe-OBADA-red?style=flat-square&logo=tryhackme)
 ![Rooms](https://img.shields.io/badge/Rooms%20Completed-14-blue?style=flat-square)
 ![Difficulty](https://img.shields.io/badge/Hard-1-critical?style=flat-square)
-![Difficulty](https://img.shields.io/badge/Medium-4-orange?style=flat-square)
-![Difficulty](https://img.shields.io/badge/Easy-11-success?style=flat-square)
+![Difficulty](https://img.shields.io/badge/Medium-3-orange?style=flat-square)
+![Difficulty](https://img.shields.io/badge/Easy-10-success?style=flat-square)
 
 > Structured write-ups for TryHackMe CTF rooms — documenting methodology, tools, techniques, and lessons learned.  
 > Written from the perspective of a self-taught penetration tester following a 52-week Red Team roadmap.
