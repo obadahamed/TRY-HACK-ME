@@ -32,6 +32,7 @@
 | [🐇 Year of the Rabbit](./Year_of_the_Rabbit.md) | 🟢 Easy | Linux / Web / PrivEsc | ✅ Solved |
 | [👾 Watcher](./Watcher.md) | 🟡 Medium | linux / PrivEsc / web | ✅ Solved |
 | [/../ Team ](./Team.md) | 🟢 Easy | Linux / Web / PrivEsc | ✅ Solved |
+| [🎮 ToolsRus](./ToolsRus.md) | 🟢 Easy | Linux / Web / PrivEsc | ✅ Solved |
 
 
 
