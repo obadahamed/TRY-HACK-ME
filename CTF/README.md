@@ -33,6 +33,7 @@
 | [👾 Watcher](./Watcher.md) | 🟡 Medium | linux / PrivEsc / web | ✅ Solved |
 | [/../ Team ](./Team.md) | 🟢 Easy | Linux / Web / PrivEsc | ✅ Solved |
 | [🎮 ToolsRus](./ToolsRus.md) | 🟢 Easy | Linux / Web / PrivEsc | ✅ Solved |
+| [Blog](./Blog.md) | 🟡 Medium | linux / PrivEsc / web | ✅ Solved |
 
 
 
