@@ -9,6 +9,18 @@ i do first
 sudo nano /etc/hosts
 10.145.136.27  internal.thm
 ```
+---
+
+## 📋 Table of Contents
+1. [Nmap Enumeration](#1-nmap-enumeration)
+2. [Gobuster](#2-gobuster)
+3. [WPscan Enumeration](#3-wpscan-enumeration)
+4. [Netcat Listener](#4-netcat-listener)
+5. [Shell](#5-shell)
+6. [User Flag](#6-user-flag)
+7. [Privilege Escalation](#7-privilege-escalation)
+8. [Root Flag](#8-root-flag)
+9. [Lessons Learned](#9-lessons-learned)
 
 ---
 
