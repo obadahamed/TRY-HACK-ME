@@ -9,17 +9,6 @@ i do first
 sudo nano /etc/hosts
 10.145.136.27  internal.thm
 ```
----
-## 📋 Table of Contents
-
-1. [Reconnaissance](#1.-Nmap-Enumeration)
-2. [FTP Enumeration & Steganography](#2-ftp-enumeration--steganography)
-3. [Hash Cracking](#3-hash-cracking)
-4. [Web Application & Reverse Shell](#4-web-application--reverse-shell)
-5. [Privilege Escalation to Charlie](#5-privilege-escalation-to-charlie)
-6. [Privilege Escalation to Root](#6-privilege-escalation-to-root)
-7. [Flags](#7-flags)
-8. [Summary](#8-summary)
 
 ---
 
