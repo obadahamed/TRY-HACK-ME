@@ -36,6 +36,7 @@
 | [🏆 Team](./Team.md) | 🟢 Easy | Linux · Web · PrivEsc | ✅ |
 | [🛠️ ToolsRus](./ToolsRus.md) | 🟢 Easy | Linux · Web · PrivEsc | ✅ |
 | [📝 Blog](./Blog.md) | 🟡 Medium | Linux · WordPress · PrivEsc | ✅ |
+| [Internal](./Internal.md)| 🔴 Hard | Linux  · Web · PrivEsc . tunuulling . WordPress| ✅ |
 
 ---
 
