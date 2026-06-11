@@ -46,6 +46,8 @@
 | [🧟 Biohazard](./Biohazard.md) | Steganography · Cryptography | Multiple steganography techniques | ✅ |
 | [📝 Billing](./Billing.md) | Web · Code Review | PHP analysis, SQL injection | ✅ |
 | [⚙️ Boiler](./Boiler.md) | Linux · Web · PrivEsc | Wordpress, enumeration, privesc | ✅ |
+| [Smag Grotto](./Smag_Grotto.md) | Linux · Web · PrivEsc | PrivEsc , Web | ✅ |
+
 
 ---
 
