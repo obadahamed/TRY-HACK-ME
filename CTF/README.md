@@ -62,6 +62,7 @@
 | [📰 Daily Bugle](./Daily_Bugle.md) | Linux · SQLi · Web · PrivEsc | Joomla SQLi, reverse shell, kernel exploit | ✅ |
 | [📝 Blog](./Blog.md) | Linux · WordPress · PrivEsc | WordPress enum, brute-force, privesc | ✅ |
 | [🐰 UltraTech](./UltraTech.md) | Linux · Docker · Command Injection | API testing, command injection, Docker escape | ✅ |
+| [ Binex ](./Binex.md) | Linux . PrivEsc | SMB enum . brute-force | ✅ |
 
 ---
 
